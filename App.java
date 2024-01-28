@@ -3,7 +3,7 @@ import javax.swing.*;
 /**
  * App
  */
-public class App {
+public class App extends ActionListener {
 
     public static void main(String[] args) {
         JLabel  label1 = new JLabel("Username:");
@@ -20,11 +20,11 @@ JLabel title = new JLabel("<html><font face=\"Times New Roman\" size = \"5\">LOG
 
         //Adding components to the frame
         title.setBounds(200, 20, 300, 50);
-        label1.setBounds(20,80, 80, 30);
-        label2.setBounds(20,150, 80, 30);
+        label1.setBounds(120,80, 80, 30);
+        label2.setBounds(120,150, 80, 30);
         email.setBounds(200,80,150,30);
         pass.setBounds(200, 150 , 150,30);
-       sub.setBounds(100,220,80,30);
+       sub.setBounds(200,220,80,30);
        f.add(title);
         f.add(label1);
 
@@ -38,6 +38,13 @@ JLabel title = new JLabel("<html><font face=\"Times New Roman\" size = \"5\">LOG
         f.setSize(500,500);
         f.setVisible(true);
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        sub.addActionListener(e -> {
+            if (e.getSource() == sub) {
+                String userName = email.getText().toString();
+                String passWord = new String(pass.getPassword()); 
+            }
+        });
+        
                 
     }
 }
