@@ -1,16 +1,19 @@
+import java.awt.*;
 import javax.swing.*;
 
 /**
  * App
  */
 public class App extends ActionListener {
-
     public static void main(String[] args) {
+        final Connecting_Database usingConnection = new Connecting_Database();
+
         JLabel  label1 = new JLabel("Username:");
         JLabel  label2 = new JLabel("Password:");
 
 JLabel title = new JLabel("<html><font face=\"Times New Roman\" size = \"5\">LOGIN PAGE</font></html>");
         JFrame f= new JFrame("Login Portal");
+        JFrame logged_in = new JFrame("Booking Portal");
         JButton sub = new JButton("Login");
         JTextField email = new JTextField();
         JPasswordField pass = new JPasswordField();
@@ -47,10 +50,24 @@ JLabel title = new JLabel("<html><font face=\"Times New Roman\" size = \"5\">LOG
             if (e.getSource() == sub) {
                 
                 String userName = email.getText().toString();
-                String passWord = new String(pass.getPassword()); 
+                String passWord = new String(pass.getPassword());
+                try {
+                    if (usingConnection.login_read(userName, passWord)) {
+                        JOptionPane.showMessageDialog(f, "Successfully Logged In!");
+                        logged_in.setVisible(true);
+                        f.dispose();
+                    }
+                } catch (HeadlessException e1) {
+                    // TODO  catch block
+                    e1.printStackTrace();
+                } catch (Exception e1) {
+                    // TODO  catch block
+                    e1.printStackTrace();
+                }
             }
             else if (e.getSource()== fail){
                 System.out.println("Failed Login Attempt!");
+                
 
             }
         });
