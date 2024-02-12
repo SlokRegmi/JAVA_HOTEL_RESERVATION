@@ -2,6 +2,9 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "mysql-connector-j-8.2.0.jar",
-        "c:\\Users\\ryzen 7\\Downloads\\mysql-connector-j-8.2.0\\mysql-connector-j-8.2.0\\mysql-connector-j-8.2.0.jar"
+        "c:\\Users\\ryzen 7\\Downloads\\mysql-connector-j-8.2.0\\mysql-connector-j-8.2.0\\mysql-connector-j-8.2.0.jar",
+        "c:\\Users\\ryzen 7\\Downloads\\javamail1_4_7\\javamail-1.4.7\\mail.jar",
+        "c:\\Users\\ryzen 7\\Downloads\\javamail1_4_7\\javamail-1.4.7\\lib\\smtp.jar",
+        "c:\\Users\\ryzen 7\\Downloads\\javax.activation_1.1.0.v201211130549.jar"
     ]
 }
