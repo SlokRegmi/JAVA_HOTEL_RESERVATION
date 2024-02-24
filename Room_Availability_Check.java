@@ -7,8 +7,8 @@ class Room_Availability_Check{
 
         public String room_availability_check(int room_no,int x) throws Exception{
         Connection cn = null;
-        String server_username = "root";
-        String server_password = "";
+        String server_username = "username";
+        String server_password = "password";
         Class.forName("com.mysql.cj.jdbc.Driver");
         final String url = "jdbc:mysql://localhost:3306/users";
         cn = DriverManager.getConnection(url,server_username,server_password);
